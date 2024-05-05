@@ -1,23 +1,14 @@
 import asyncio
-from aiogram import Bot, Dispatcher, types
-from aiogram.filters import CommandStart
+from aiogram import Bot, Dispatcher
 
-TOKEN = '6996688346:AAEV26orIvxBI-Gq9e6GgVbF3EHBmH1xk7I'
+TOKEN = '6996688346:AAEF_p6ejIWYrH9yR_pTvgroSgqMVlWYPAM'
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
+from handles.user_privat import user_router
 
-@dp.message(CommandStart())
-async def start(message: types.Message):
-    await message.answer('вы выгледите солидно, не хотите преобрести немного павер энд мативейшен')
-
-
-@dp.message()
-async def echo(message: types.Message):
-    await message.answer('бот в разработке, простите мы не можем дать вам POWER')
-    user_text = message.text
-    await message.answer(user_text)
+dp.include_router(user_router)
 
 
 async def main():
