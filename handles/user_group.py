@@ -1,7 +1,8 @@
 from aiogram import types, Router, F
 
 group_router = Router()
-ban = ['пчела', 'кринж', 'пон', 'ааа', 'лягушкаболотная', ',', 'даблин']
+ban = ['пчела', 'кринж', 'пон', 'ааа', 'лягушка'
+                                       'болотная', ',', 'даблин']
 
 
 @group_router.message(F.text)

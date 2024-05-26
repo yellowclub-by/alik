@@ -8,12 +8,12 @@ dp = Dispatcher()
 
 from handles.user_privat import user_router
 from handles.user_group import group_router
-
-dp.include_router(group_router)
 dp.include_router(user_router)
+dp.include_router(group_router)
 
 
 async def main():
+    print('Start')
     await dp.start_polling(bot)
 
 
