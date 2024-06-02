@@ -1,5 +1,7 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
+back_btn = KeyboardButton(text='назад')
+
 start_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
@@ -24,6 +26,9 @@ menu_kb = ReplyKeyboardMarkup(
         [
             KeyboardButton(text='плашь Вергил'),
             KeyboardButton(text='павер')
+        ],
+        [
+            back_btn
         ]
     ],
     resize_keyboard= True,

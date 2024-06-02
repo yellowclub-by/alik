@@ -8,8 +8,11 @@ dp = Dispatcher()
 
 from handles.user_privat import user_router
 from handles.user_group import group_router
+from handles.menu import menu_router
 dp.include_router(user_router)
+dp.include_router(menu_router)
 dp.include_router(group_router)
+
 
 
 async def main():

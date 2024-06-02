@@ -8,14 +8,14 @@ user_router = Router()
 @user_router.message(CommandStart())
 async def start(message: types.Message):
     await message.answer('вы выгледите солидно, не хотите преобрести немного павер энд мативейшен',
-                         reply_markup=reply.start_kb)
+                         reply_markup=reply.start_kb, )
 
 
 @user_router.message(F.text.lower() == 'меню')
 @user_router.message(Command('menu'))
 async def menu(message: types.Message):
     await message.answer('мотивейшн комбо(ямато, мотивейшн и павер, умение котатся на скейте',
-                        reply_markup=reply.menu_kb)
+                         reply_markup=reply.menu_kb)
 
 
 @user_router.message(F.text.lower() == 'о нас')
@@ -36,10 +36,15 @@ async def addresses(messege: types.Message):
     await messege.answer('я подумаю')
 
 
+@user_router.message(F.text.lower() == 'назад')
+async def beck(message: types.Message):
+    await message.answer('главное меню',
+                         reply_markup=reply.start_kb)
+
 # @user_router.message(F.text)
-@user_router.message(F.photo)
-async def echo(message: types.Message):
-    await message.answer('сработал магический фильтр ешкеррееееееееееееееее')
+# @user_router.message(F.photo)
+# async def echo(message: types.Message):
+#     await message.answer('сработал магический фильтр ешкеррееееееееееееееее')
 
 # @user_router.message(F.text.lower() == 'доставка')
 # async def echo(message: types.Message):
