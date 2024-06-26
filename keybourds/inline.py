@@ -10,3 +10,15 @@ def addresses_kb():
         width=2
     )
     return builder.as_markup()
+
+
+links_kb = InlineKeyboardMarkup(
+   inline_keyboard=[
+       [
+           InlineKeyboardButton(text='ютуб канал', url='https://www.youtube.com/watch?v=xm3YgoEiEDc')
+       ],
+       [
+           InlineKeyboardButton(text="тг админа", url='tg://resolve?domain=kkkarensmith')
+       ]
+   ]
+)
